@@ -1,0 +1,19 @@
+/* #cv-form{
+    display: none;
+} */
+/* profile image */
+.myimg{
+    border: 1px solid red;
+    border-radius: 50%;
+    width: 150px;
+
+}
+
+.background{
+    background-color: aqua;
+}
+
+/* hide cv */
+#cv-temp{
+    display: none;
+}

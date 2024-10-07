@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container-fluid" id="cv-form">
+        <h1 class="text-center my-2">Resume Builder</h1>
+        <p class="text-center"> create your job cv</p>
+
+        <div class="row">
+            <div class="col-md-6 mt-2">
+                <h3>Personal Information</h3>
+
+                <div class="form-group">
+                    <label for="namefield">Your Name</label>
+                    <input type="text" id="namefield" placeholder="Enter your Full Name" class="form-control">
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="contactfield">Your Contact</label>
+                    <input type="text" id="contactfield" placeholder="Enter number" class="form-control">
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="addressfield">Your Address</label>
+                    <textarea id="addressfield" placeholder="Enter here" class="form-control"></textarea>
+                </div>
+
+                <p class="text-secondary my-3">Important Links</p>
+
+                <div class="form-group mt-2">
+                    <label for="githubfield">Github</label>
+                    <input type="text" id="gitfield" placeholder="Enter here" class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="linkedfield">LinkedIn</label>
+                    <input type="text" id="linkfield" placeholder="Enter here" class="form-control">
+                </div>
+
+                <div class="form-group mt-2">
+                    <label for="instafield">Instagram</label>
+                    <input type="text" id="instafield" placeholder="Enter here" class="form-control">
+                </div>
+
+
+
+            </div>
+
+            <div class="col-md-6 mt-2">
+                <h3> Professional Information </h3>
+
+                <div class="form-group mt-2">
+                    <label for="">Objective</label>
+                    <textarea id="objfield" rows="5" placeholder="Enter here" class="form-control"></textarea>
+
+                </div>
+
+                <div class="form-group mt-2" id="we">
+                    <label for="">Work Experience</label>
+                    <textarea rows="3" placeholder="Enter here" class="form-control wefield"></textarea>
+
+                    <div class="container text-center mt-2" id="weAddButton">
+                        <button onclick="addNewWEfield()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+
+                <div class="form-group mt-2" id="aq">
+                    <label for=""></label>Academic Qualification
+                    <textarea rows="3" placeholder="Enter here" class="form-control aqfield"></textarea>
+
+                    <div class="container text-center mt-2" id="aqAddButton">
+                        <button onclick="addNewAQfield()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container text-center mt-3">
+            <button onclick="buildcv()" class="btn btn-primary btn-lg">Build CV</button>
+
+        </div>
+
+    </div>
+    <!-- cv template -->
+    <div class="container-fluid" id="cv-temp">
+        <div class="row">
+
+            <div class="col-md-4 text-center py-5 background">
+                <!-- first col -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzCb4DonWw5pT1-A3Su9HzG6TTN4nMOmj7tg&s"
+                    alt="" class="img-fluid myimg" />
+
+                <div class="container">
+                    <p id="nameT1">Sanjay Kumar Kashyap</p>
+                    <p id="contT">+914688464698, +919856558565</p>
+                    <p id="addressT">49645695665 sector 35 noid ,india</p>
+                    <hr>
+
+                    <p><a id="gitT"  href="#1">www.github.com/sanjaihub</a></p>
+                    <p><a id="linkT" href="#2">www.linkedin.com/Sanjay Kumar</a></p>
+                    <p><a id="instaT" href="#3">www.instagaram.com/sanjaigram</a></p>
+                </div>
+            </div>
+            <div class="col-md-8 py-5">
+                <!-- Second column -->
+                <h1 id="nameT2" class="text-center" style="font-weight: 980;">Sanjay Kumar Kashyap</h1>
+                <!-- cards -->
+                <div class="card mt-4 ">
+                    <div class="card-header" style="background-color: aqua;">
+                        <!-- <div class="card-header background "> -->
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objT" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio nostrum impedit veritatis nam
+                            officia voluptatibus molestiae ipsum temporibus necessitatibus provident molestias,
+                            voluptatum,
+                            aperiam vel architecto non id doloremque earum culpa!</p>
+                    </div>
+                </div>
+                <!-- work exp -->
+                <div class="card mt-4 ">
+                    <div class="card-header" style="background-color: aqua;">
+                        <!-- <div class="card-header background "> -->
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT" >
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, fuga!</li>
+                        
+                        
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, fuga!</li>
+                        
+                    
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, fuga!</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- acad quil -->
+
+                <div class="card mt-4 ">
+                    <div class="card-header" style="background-color: aqua;">
+                        <!-- <div class="card-header background "> -->
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="aqT">
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, fuga!</li>
+                        
+                        
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, fuga!</li>
+                        
+                        
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, fuga!</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="container mt-3 text-center">
+                    <button onclick="printCV()" class="btn" style="background-color:aqua">Print CV</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
